@@ -1,5 +1,5 @@
-function (...items) {
-  if (!c.every((a) => Number.isNumber(a)))
+function random(...items) {
+  if (!items.every((a) => Number.isNumber(a)))
     throw "All arguments must be numbers.";
   return items.reduce((a, b) => a + b);
 }
