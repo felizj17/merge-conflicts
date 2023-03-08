@@ -1,8 +1,10 @@
-function (...c) {
-  if (!c.every((a) => Number.isNumber(a)))
+function addNums(...nums) {
+  if (!nums.every((num) => Number.isInteger(num) ))
     throw "All arguments must be numbers.";
-  return c.reduce((a, b) => a + b);
+  return nums.reduce((prev, curr) => prev + curr);
 }
 
-fn(1, 2, 3); //> 6
-fn(10, "B", 20); //> error All arguments must be numbers.
+console.log(addNums(1, 2, 3)); //> 6
+console.log(addNums(4, 5)); //> 9
+console.log(addNums(4, "5")); //> error All arguments must be numbers.
+console.log(addNums(10, "B", 20)); //> error All arguments must be numbers.
